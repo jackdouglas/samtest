@@ -1,7 +1,8 @@
 {
-  "image": "node:18-bookworm",
-  "containerUser": "root",
-  
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
   "features": {
     "aws-cli": "latest",
     "docker-in-docker": "latest"
