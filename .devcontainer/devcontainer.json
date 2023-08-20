@@ -1,0 +1,12 @@
+{
+  "image": "node:18-bookworm",
+  "containerUser": "root",
+  
+  "features": {
+    "aws-cli": "latest",
+    "docker-in-docker": "latest"
+  },
+
+  "postCreateCommand": ".devcontainer/postCreate.sh"
+
+}

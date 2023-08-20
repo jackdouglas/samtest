@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31  
+Globals:
+  Function:
+    Runtime: nodejs18.x
+    MemorySize: 128
+    Architectures: 
+      - x86_64
+    EventInvokeConfig:
+      MaximumRetryAttempts: 0
+
+Resources:
+
+  homeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 5
+      MemorySize: 512
+      CodeUri: ./
+      Handler: index.handler
+      Events:
+        ApiEvent:
+          Type: HttpApi
+          Properties:
+            Path: /
+            Method: GET
